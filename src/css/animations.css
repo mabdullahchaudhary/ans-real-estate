@@ -1,0 +1,99 @@
+.marquee-track {
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #1a1a1a;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #1a1a1a;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(0px);
+}
+
+.cursor-ring.hover-active {
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.insights-marquee {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.insights-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 2.75rem;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: insightsMarquee 20s linear infinite;
+}
+
+.insights-marquee-item {
+  flex: 0 0 auto;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 1rem + 1.2vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes insightsMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

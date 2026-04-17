@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Advisory | GenzLancer</title>
+
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400&f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/base.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+  </head>
+  <body
+    class="bg-slate text-white font-satoshi antialiased overflow-x-hidden selection:bg-champagne selection:text-white"
+  >
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <header
+      class="fixed w-full top-0 z-50 py-6 px-8 md:px-16 flex justify-between items-center bg-slate/90 backdrop-blur-md border-b border-white/10 transition-all duration-500"
+    >
+      <a
+        href="https://www.genzlancer.com"
+        class="font-cabinet font-bold tracking-widest text-xl uppercase"
+        >GenzLancer</a
+      >
+      <nav class="hidden md:flex gap-8 font-medium text-white/80">
+        <a
+          href="index.html"
+          class="hover-target transition-colors hover:text-champagne"
+          >Home</a
+        >
+        <a
+          href="properties.html"
+          class="hover-target transition-colors hover:text-champagne"
+          >Properties</a
+        >
+        <a
+          href="agency.html"
+          class="hover-target transition-colors hover:text-champagne"
+          >Agency</a
+        >
+        <a href="contact.html" class="hover-target text-champagne">Contact</a>
+      </nav>
+      <a
+        href="contact.html"
+        class="magnetic-btn border border-white/30 hover:border-white text-white px-6 py-2 rounded-full text-sm font-medium transition-all"
+      >
+        Private Advisory
+      </a>
+    </header>
+    <main
+      class="pt-40 pb-32 px-8 md:px-16 max-w-[100rem] mx-auto min-h-screen flex items-center"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full"
+      >
+        <div class="contact-stagger">
+          <p
+            class="text-champagne font-bold tracking-[0.2em] text-sm mb-6 uppercase"
+          >
+            Discreet Inquiries
+          </p>
+          <h1
+            class="font-cabinet text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
+          >
+            Initiate <br />
+            Conversation.
+          </h1>
+          <p class="text-xl leading-relaxed text-white/60 mb-12 max-w-lg">
+            GenzLancer operates on a strictly confidential basis. Access to our
+            off-market portfolio and private advisory services requires prior
+            verification. Please submit your details below, and a managing
+            partner will reach out to establish contact.
+          </p>
+
+          <div class="space-y-6 text-white/60">
+            <div>
+              <p
+                class="text-sm uppercase tracking-widest text-white/40 mb-1 font-bold"
+              >
+                Global Headquarters
+              </p>
+              <p class="text-lg">
+                1450 Century Park East, Penthouse Level<br />Los Angeles, CA
+                90067
+              </p>
+            </div>
+            <div>
+              <p
+                class="text-sm uppercase tracking-widest text-white/40 mb-1 font-bold"
+              >
+                Direct Line (Encrypted)
+              </p>
+              <p
+                class="text-lg hover:text-champagne transition-colors cursor-pointer"
+              >
+                +1 (310) 555-0198
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-stagger">
+          <div
+            class="bg-white/5 p-10 md:p-14 rounded-[2rem] border border-white/10 backdrop-blur-sm"
+          >
+            <form class="space-y-10">
+              <div class="relative group">
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="w-full bg-transparent border-b border-white/20 py-4 text-white text-xl focus:outline-none focus:border-champagne transition-colors peer placeholder-transparent"
+                />
+                <label
+                  for="name"
+                  class="absolute left-0 top-4 text-white/50 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-champagne peer-valid:-top-6 peer-valid:text-sm peer-valid:text-champagne cursor-text"
+                  >Legal Name</label
+                >
+              </div>
+
+              <div class="relative group">
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full bg-transparent border-b border-white/20 py-4 text-white text-xl focus:outline-none focus:border-champagne transition-colors peer placeholder-transparent"
+                />
+                <label
+                  for="email"
+                  class="absolute left-0 top-4 text-white/50 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-champagne peer-valid:-top-6 peer-valid:text-sm peer-valid:text-champagne cursor-text"
+                  >Private Email</label
+                >
+              </div>
+
+              <div class="relative group">
+                <select
+                  id="inquiry-type"
+                  required
+                  class="w-full bg-transparent border-b border-white/20 py-4 text-white text-xl focus:outline-none focus:border-champagne transition-colors appearance-none cursor-pointer text-white/50"
+                >
+                  <option
+                    value=""
+                    disabled
+                    selected
+                    class="bg-slate text-white"
+                  >
+                    Select Inquiry Type
+                  </option>
+                  <option value="acquisition" class="bg-slate text-white">
+                    Asset Acquisition (Buy)
+                  </option>
+                  <option value="disposition" class="bg-slate text-white">
+                    Discreet Disposition (Sell)
+                  </option>
+                  <option value="advisory" class="bg-slate text-white">
+                    General Advisory
+                  </option>
+                </select>
+              </div>
+
+              <div class="relative group mt-4">
+                <textarea
+                  id="message"
+                  rows="1"
+                  class="w-full bg-transparent border-b border-white/20 py-4 text-white text-xl focus:outline-none focus:border-champagne transition-colors peer placeholder-transparent resize-none overflow-hidden"
+                  oninput="
+                    this.style.height = '';
+                    this.style.height = this.scrollHeight + 'px';
+                  "
+                ></textarea>
+                <label
+                  for="message"
+                  class="absolute left-0 top-4 text-white/50 text-xl transition-all peer-focus:-top-6 peer-focus:text-sm peer-focus:text-champagne peer-valid:-top-6 peer-valid:text-sm peer-valid:text-champagne cursor-text"
+                  >Message (Optional)</label
+                >
+              </div>
+
+              <button
+                type="button"
+                class="magnetic-btn w-full bg-champagne text-slate py-5 rounded-full font-bold hover:bg-white transition-colors text-lg mt-8"
+              >
+                Submit Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="w-full py-12 px-8 md:px-16 bg-slate text-white border-t border-white/10"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
+      >
+        <div
+          class="font-cabinet font-bold tracking-widest text-lg uppercase mb-4 md:mb-0"
+        >
+          GenzLancer Advisory
+        </div>
+        <p class="text-sm text-white/50">© 2026 All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./src/js/app.js"></script>
+  </body>
+</html>

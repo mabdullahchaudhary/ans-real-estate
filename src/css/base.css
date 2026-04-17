@@ -1,0 +1,86 @@
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-champagne, #c5a880);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.2s,
+      height 0.2s,
+      border-color 0.2s;
+  }
+
+  .cursor-dot,
+  .cursor-outline {
+    mix-blend-mode: difference;
+  }
+
+  .cursor-hover {
+    width: 60px;
+    height: 60px;
+    border-color: #c5a880;
+    background-color: rgba(197, 168, 128, 0.1);
+  }
+}
+
+.stroke-text {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.stroke-text:hover {
+  -webkit-text-stroke: 2px #c5a880;
+}
+
+.marquee-content {
+  animation: scrollText 25s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
